@@ -1,0 +1,114 @@
+body {
+  margin: 0; 
+  padding: 0; 
+  font-family: Arial, sans-serif;
+  background-color: #000000; /* Fundo da página totalmente preto */
+  color: aliceblue;
+}
+
+.Menu {
+  display: flex;
+  align-items: center;
+  background-color: rgb(14, 23, 33);
+  padding: 20px 30px; 
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  width: 93%;
+  border: 1px solid #334155;
+  border-radius: 0px 0px 20px 20px; /* Mantém o acabamento original arredondado embaixo */
+  z-index: 50;
+  margin: 0 auto;
+}
+
+a, .nav-link {
+  color: #e2e8f0;          
+  text-decoration: none;  
+  font-family: sans-serif; 
+  font-weight: 700;       
+  font-size: 14px;        
+  transition: color 0.2s; 
+  cursor: pointer;
+  background: none;       
+  border: none;           
+  padding: 10px;
+}
+
+a:hover, .nav-link:hover {
+  color: #3b82f6;         
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Diminuído um pouco para o input encaixar melhor */
+  margin-left: auto; 
+}
+
+/* O NOVO INPUT INTERNO (Aparece à esquerda da lupa com a borda branca grossa) */
+.menu-inline-search {
+  width: 200px; /* Tamanho perfeito para não empurrar os outros links */
+  padding: 8px 14px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 2px solid #ffffff; /* Borda branca grossa idêntica à foto */
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: bold;
+  outline: none;
+  box-sizing: border-box;
+  animation: abrirBusca 0.2s ease-out; /* Animação suave abrindo para a esquerda */
+}
+
+.menu-inline-search::placeholder {
+  color: #8a99ad;
+}
+
+/* Botão circular da lupa */
+.span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.imagem {
+  width: 20px;  
+  height: 20px; 
+  object-fit: contain;
+  cursor: pointer;
+
+  background: none;
+}
+
+/* Quando clicado, a bolinha fica branca e a lupa preta */
+.span.lupa-ativa {
+  background-color: #ffffff;
+}
+
+.span.lupa-ativa .imagem {
+  filter: invert(0) brightness(0);
+}
+
+/* Efeito de animação para a barra surgir elegantemente */
+@keyframes abrirBusca {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 200px;
+    opacity: 1;
+  }
+}

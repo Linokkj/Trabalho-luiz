@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-
 export default function Menu({ user, onLogout, busca, setBusca }) {
   const navigate = useNavigate();
   // Controla se a caixinha de pesquisa está aberta ou fechada dentro do menu
